@@ -1,0 +1,13 @@
+services:
+  airflow:
+    image: dataeng-dibimbing/airflow
+    container_name: ${AIRFLOW_CONTAINER_NAME}
+    hostname: ${AIRFLOW_HOST_NAME}
+    entrypoint: /scripts/airflow_entrypoint.sh
+    restart: always
+    volumes:
+      - ../dags:/opt/airflow/dags
+      - ../data:/opt/airflow/data
+      - ../scripts:/scripts
+    ports:
+      - ${AIRFLOW_WEBSERVER_PORT}:8080
