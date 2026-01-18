@@ -2,7 +2,6 @@ from airflow.decorators import dag, task
 from airflow.sensors.filesystem import FileSensor
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.models import Variable
-from datetime import timedelta
 from datetime import datetime
 import pandas as pd
 #Dag with Variable
